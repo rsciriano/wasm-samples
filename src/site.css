@@ -1,0 +1,11 @@
+input[type="number"] {
+    width: 5em;
+}
+div {
+    padding: .5rem;
+}
+textarea {
+    display: block;
+    width: 40em;
+    margin-top: .5em;
+}

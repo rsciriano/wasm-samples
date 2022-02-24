@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<script src="../wasm_exec.js"></script>
+		<script src="../wasm_init.js"></script>
+        <link href="../site.css" rel="stylesheet" />
+	</head>
+	<body>
+        <h1>WASM simple call</h1>
+        <div>
+            Sum from Wasm: 
+            <input type="number" id="a" /> + <input type="number" id="b" /> 
+            <button id="sumButton">=</button>
+            <input type="number" id="sumResult" /> 
+        </div>
+        <script>
+            wasm_init('simple_call.wasm');    
+            document.querySelector('#sumButton').addEventListener('click', function(){
+                var a = document.getElementById('a').value;
+                var b = document.getElementById('b').value;
+                document.getElementById('sumResult').value = wasm.exports.sum(a, b);
+            });
+        </script>
+    </body>
+</html>
